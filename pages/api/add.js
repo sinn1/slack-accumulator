@@ -24,6 +24,10 @@ export default async (req, res) => {
     text,
   } = req.query;
 
+  if (!text) {
+    return res.send("Invalid arguments. Try /add [name] [value] [?days]");
+  }
+  
   const commandArgs = text?.split(' ');
   
   if (commandArgs.length < 2) {
