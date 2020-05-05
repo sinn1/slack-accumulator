@@ -16,6 +16,7 @@
     "next": "9.3.6",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "url": "^0.11.0"
+    "url": "^0.11.0",
+    "urlencoded-body-parser": "^3.0.0"
   }
 }

@@ -1,4 +1,5 @@
 import moment from 'moment';
+const parse = require('urlencoded-body-parser');
 
 const MongoClient = require('mongodb').MongoClient;
 const uri = process.env.MONGO_DB_CONNECTION;
@@ -22,12 +23,12 @@ export default async (req, res) => {
     channel_id,
     channel_name,
     text,
-  } = req.query;
+  } = parse(req);
 
   if (!text) {
-    return res.send("Invalid arguments. Try /add [name] [value] [?days]");
+    return res.send("Not enough commands supplied. Try /add [name] [value] [?days]");
   }
-  
+
   const commandArgs = text?.split(' ');
   
   if (commandArgs.length < 2) {
