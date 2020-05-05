@@ -1,8 +1,8 @@
 {
   "build": {
     "env": {
-      "SECRET": "@my-secret-key",
-      "ANOTHER_SECRET": "@my-other-secret-key"
+      "MONGO_DB": "@mongo_db",
+      "MONGO_DB_CONNECTION": "@mongo_db_connection"
     }
   }
 }
