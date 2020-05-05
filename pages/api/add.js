@@ -26,7 +26,7 @@ export default async (req, res) => {
   } = parse(req);
 
   if (!text) {
-    return res.send("Not enough commands supplied. Try /add [name] [value] [?days]");
+    return res.json(parse(req));
   }
 
   const commandArgs = text?.split(' ');
