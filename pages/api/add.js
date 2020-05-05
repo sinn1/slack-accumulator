@@ -39,7 +39,7 @@ export default async (req, res) => {
   }
   const now = new Date();
 
-  MongoClient.connect(uri, (err, client) => {
+  new MongoClient(uri, {useNewUrlParser: true, useUnifiedTopology: true}).connect((err, client) => {
     const db = client.db(database);
     console.log(`connected to db: ${database}`);
 
