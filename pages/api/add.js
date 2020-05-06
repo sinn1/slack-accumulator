@@ -17,7 +17,10 @@ const getDocumentKey = (team_id, channel_id, name) => {
 
 export default async (req, res) => {
   res.statusCode = 200;
-  var data = await parse(req);
+  const data = req.body;
+
+  res.json(req.body);
+  return;
 
   const {
     team_id,
