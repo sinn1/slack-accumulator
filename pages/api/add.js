@@ -17,16 +17,17 @@ const getDocumentKey = (team_id, channel_id, name) => {
 
 export default async (req, res) => {
   res.statusCode = 200;
+  var data = await parse(req);
 
   const {
     team_id,
     channel_id,
     channel_name,
     text,
-  } = parse(req);
+  } = data
 
   if (!text) {
-    return res.json(parse(req));
+    return res.json(data);
   }
 
   const commandArgs = text?.split(' ');
